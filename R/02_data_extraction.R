@@ -11,8 +11,9 @@ library(tidyr)
 library(lubridate)
 library(stringr)
 
-# Source database connection script
-source("R/01_database_connection.R")
+# Note: Database connection functions are loaded by sourcing 01_database_connection.R
+# This file can be sourced standalone by uncommenting the line below:
+# source("R/01_database_connection.R")
 
 #' Extract Top Artists Data
 #' 

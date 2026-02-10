@@ -15,9 +15,10 @@ library(viridis)
 library(gridExtra)
 library(reshape2)
 
-# Source required scripts
-source("R/01_database_connection.R")
-source("R/02_data_extraction.R")
+# Note: Database connection and data extraction functions are loaded by sourcing earlier scripts
+# This file can be sourced standalone by uncommenting the lines below:
+# source("R/01_database_connection.R")
+# source("R/02_data_extraction.R")
 
 #' Create Top Artists Visualization
 #' 

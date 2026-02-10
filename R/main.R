@@ -4,17 +4,8 @@
 # Clear environment
 rm(list = ls())
 
-# Set working directory to script location (works in RStudio and command line)
-# For RStudio users: automatically sets to script location
-# For command line users: manually set working directory before running
-tryCatch({
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
-    setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-  }
-}, error = function(e) {
-  # If not in RStudio, assume working directory is already set
-  message("Working directory not automatically set. Please ensure you're in the project root.")
-})
+# NOTE: This script assumes you are running from the project root directory
+# The working directory should be the spotify_project folder (not the R subfolder)
 
 # Source all required scripts
 source("R/01_database_connection.R")
