@@ -4,8 +4,17 @@
 # Clear environment
 rm(list = ls())
 
-# Set working directory to script location
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# Set working directory to script location (works in RStudio and command line)
+# For RStudio users: automatically sets to script location
+# For command line users: manually set working directory before running
+tryCatch({
+  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+    setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+  }
+}, error = function(e) {
+  # If not in RStudio, assume working directory is already set
+  message("Working directory not automatically set. Please ensure you're in the project root.")
+})
 
 # Source all required scripts
 source("R/01_database_connection.R")
