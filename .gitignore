@@ -1,0 +1,33 @@
+# R
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+.Renviron
+
+# Output files
+output/
+*.png
+*.jpg
+*.pdf
+
+# Database credentials
+.env
+config.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
